@@ -5,5 +5,5 @@ kong-dbless:
 	docker-compose up -d
 
 clean:
-	docker-compose kill
-	docker-compose rm -f
+	COMPOSE_PROFILES=database KONG_DATABASE=postgres docker-compose kill
+	COMPOSE_PROFILES=database KONG_DATABASE=postgres docker-compose rm -f
